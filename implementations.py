@@ -56,3 +56,26 @@ def ridge_regression(y, tx, lambda_):
     
     #returns the root mean squared error associated with the optimal weights
     return rmse, w_opt
+
+
+
+
+def reg_logistic_regression(y, tx, w, gamma, max_iters, lambda_):
+    #A completer avec le max iters !!
+    """
+    Do one step of gradient descent, using the penalized logistic regression.
+    Return the loss and updated w.
+    """
+   
+    
+    for n_iter in range(max_iters):
+        loss,w=learning_by_penalized_gradient(y, tx, w, gamma, lambda_)
+      
+
+        if (n_iter % 100 == 0):
+            # print average loss for the last print_every iterations
+            print("Current iteration={i}, loss={l}".format(i=n_iter, l=loss))
+            
+        
+    
+    return w, loss
